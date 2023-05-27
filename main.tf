@@ -1,3 +1,9 @@
+variable "tag" {
+  description = "Variable description"
+}
+locals {
+  tag_value = terraform.workspace == "default" ? "WladHadou" : "Sebt_El_Gurdane"
+}
 
 resource "aws_s3_bucket" "mybucket" {
   bucket = "mrcxdftfnot-${terraform.workspace}"
